@@ -5,7 +5,7 @@
 This project blends **data science, philosophy, and UX design** to explore one of the oldest human questions:  
 > “What does it mean to be human?”
 
-The goal is to analyze how predictable, repetitive, and formulaic AI writing is — compared to real human writing — using simple metrics in Python. We then design a UX concept to show how writing tools could support more originality.
+The goal is to analyze how predictable, repetitive, and formulaic AI writing is — compared to real human writing using simple metrics in Python. then design a UX concept to show how writing tools could support more originality.
 
 ---
 
