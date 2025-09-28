@@ -48,7 +48,7 @@ AI-is-Boring/
 ---
 
 ## 📜 Author
-Your Name — [GitHub](https://github.com/jekeziem) | [LinkedIn](https://linkedin.com/in/jenny-ekeziem/)
+Jenny Ekeziem — [GitHub](https://github.com/jekeziem) | [LinkedIn](https://linkedin.com/in/jenny-ekeziem/)
 
 
 ---
