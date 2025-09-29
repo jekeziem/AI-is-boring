@@ -21,19 +21,14 @@ The goal is to analyze how predictable, repetitive, and formulaic AI writing is 
 A hosted version of the app will be available here once deployed via Streamlit Cloud:  
 `https://<your-app>.streamlit.app`  *(replace after deployment)*
 
-## 📂 Repo Structure
-AI-is-Boring/
-├── app.py
-├── requirements.txt
-├── README.md
-├── BACKGROUND.md
-├── data/
-│ ├── ai_samples.txt
-│ └── human_samples.txt
-├── visuals/
-│ └── dashboard_screenshot.png
-├── .gitignore
+## 📂 Key Files  
 
+- [`app.py`](app.py) → The Streamlit application (interactive dashboard).  
+- [`requirements.txt`](requirements.txt) → Dependencies for running the app.  
+- [`BACKGROUND.md`](BACKGROUND.md) → Extended project background & inspiration.  👉 Check out the full background here: [BACKGROUND.md](BACKGROUND.md)  
+- [`data/`](data/) → Dataset used in the analysis.  
+- [`visuals/`](visuals/) → Screenshots and visuals for the project.  
+- [`.gitignore`](.gitignore)  
 
 ---
 
@@ -51,5 +46,3 @@ Jenny Ekeziem — [GitHub](https://github.com/jekeziem) | [LinkedIn](https://lin
 
 
 ---
-
-## 📂 Repo structure
