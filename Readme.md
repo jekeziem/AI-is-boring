@@ -1,6 +1,5 @@
 # AI is Boring: A Data-Driven Look at the Death of Originality in AI Writing
 
-![Dashboard Screenshot](visuals/dashboard_screenshot.png)
 
 This project blends **data science, philosophy, and UX design** to explore one of the oldest human questions:  
 > “What does it mean to be human?”
