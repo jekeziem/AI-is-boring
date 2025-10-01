@@ -18,18 +18,16 @@ The goal is to analyze how predictable, repetitive, and formulaic AI writing is 
 ---
 
 ## 🔗 Live Demo
-A hosted version of the app will be available here once deployed via Streamlit Cloud:  
-`https://<your-app>.streamlit.app`  *(replace after deployment)*
+https://ai-is-boring.streamlit.app/
 
-## 📂 Key Files  
+## 📂 Project Structure
 
 - [`app.py`](app.py) → The Streamlit application (interactive dashboard).  
 - [`requirements.txt`](requirements.txt) → Dependencies for running the app.  
-- [`BACKGROUND.md`](BACKGROUND.md) → Extended project background & inspiration.  👉 Check out the full background here: [BACKGROUND.md](BACKGROUND.md)  
-- [`data/`](data/) → Dataset used in the analysis.  
+- [`BACKGROUND.md`](BACKGROUND.md) → Extended project background & inspiration. 👉 Check out the full background here: [BACKGROUND.md](BACKGROUND.md)  
+- [`human_ai_responses_fulll.csv`](human_ai_responses_fulll.csv) → Dataset used in the analysis.  
 - [`visuals/`](visuals/) → Screenshots and visuals for the project.  
 - [`.gitignore`](.gitignore)  
-
 ---
 
 ## 🛠 Built With
