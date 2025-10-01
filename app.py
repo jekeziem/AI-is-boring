@@ -12,7 +12,6 @@ data = pd.read_csv("human_ai_responses_fulll.csv", encoding="ISO-8859-1")
 def remove_symbols(text):
     if not isinstance(text, str):
         return ""
-    # Allow only letters, numbers, basic punctuation
     text = re.sub(r"[^a-zA-Z0-9\s.,!?;:'\"-]", "", text)
     text = re.sub(r"\s+", " ", text).strip()
     return text
