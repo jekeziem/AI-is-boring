@@ -9,14 +9,19 @@ import re
 
 data = pd.read_csv("human_ai_responses_fulll.csv", encoding="ISO-8859-1")
 
-
 def remove_symbols(text):
-    text = re.sub(r'[^a-zA-Z0-9\s.,!?;]', '', str(text)) 
-    text = re.sub(r'\s+', ' ', text).strip()
+    if not isinstance(text, str):
+        return ""
+    # Allow only letters, numbers, basic punctuation
+    text = re.sub(r"[^a-zA-Z0-9\s.,!?;:'\"-]", "", text)
+    text = re.sub(r"\s+", " ", text).strip()
     return text
-data['Cleaned_Response'] = data['Response'].apply
 
 
+data["Cleaned_Response"] = data["Response"].apply(remove_symbols)
+
+
+# Sidebar filters
 st.sidebar.title("Filters")
 source = st.sidebar.selectbox("Choose Source", ["All", "Human", "AI"])
 tone = st.sidebar.selectbox("Choose Tone", ["All"] + list(data["Tone"].unique()))
@@ -27,11 +32,19 @@ if source != "All":
 if tone != "All":
     filtered = filtered[filtered["Tone"] == tone]
 
-st.title("💭 What does it mean to be human?")
+
+# Title & Intro
+
+st.title("💭What does it mean to be human?")
 st.write("An interactive comparison of **Human vs AI responses**")
 
-# ---- Sentiment distribution ----
-filtered["Sentiment"] = filtered["Response"].apply(lambda x: TextBlob(str(x)).sentiment.polarity)
+
+# Sentiment distribution
+
+filtered["Sentiment"] = filtered["Cleaned_Response"].apply(
+    lambda x: TextBlob(str(x)).sentiment.polarity
+)
+
 st.subheader("📊 Sentiment Distribution")
 col1, col2 = st.columns(2)
 
@@ -50,16 +63,24 @@ with col2:
     st.pyplot(fig)
 
 
+# Word clouds
+
 st.subheader("☁️ Word Clouds")
 
-human_text = " ".join(data[data["Source Type"] == "Human"]["Cleaned_Response"].astype(str))
-ai_text = " ".join(data[data["Source Type"] == "AI"]["Cleaned_Response"].astype(str))
+human_text = " ".join(
+    data[data["Source Type"] == "Human"]["Cleaned_Response"].astype(str)
+)
+ai_text = " ".join(
+    data[data["Source Type"] == "AI"]["Cleaned_Response"].astype(str)
+)
 
 col1, col2 = st.columns(2)
 
 with col1:
     st.markdown("**👤 Human Responses**")
-    wc_human = WordCloud(width=600, height=400, background_color="white").generate(human_text)
+    wc_human = WordCloud(width=600, height=400, background_color="white").generate(
+        human_text
+    )
     fig, ax = plt.subplots()
     ax.imshow(wc_human, interpolation="bilinear")
     ax.axis("off")
@@ -74,6 +95,10 @@ with col2:
     st.pyplot(fig)
 
 
+# Response Explorer
+
 st.subheader("📝 Response Explorer")
 for _, row in filtered.iterrows():
-    st.markdown(f"**{row['Source Type']}** ({row['Tone']}): {row['Cleaned_Response']}")
+    st.markdown(
+        f"**{row['Source Type']}** ({row['Tone']}): {row['Cleaned_Response']}"
+    )
