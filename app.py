@@ -7,7 +7,7 @@ from wordcloud import WordCloud
 import re
 
 
-data = pd.read_csv("data/human_ai_responses_fulll.csv", encoding="ISO-8859-1")
+data = pd.read_csv("human_ai_responses_fulll.csv", encoding="ISO-8859-1")
 
 
 def remove_symbols(text):
