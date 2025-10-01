@@ -6,17 +6,17 @@ from textblob import TextBlob
 from wordcloud import WordCloud
 import re
 
-# Load data
+
 data = pd.read_csv("data/human_ai_responses_fulll.csv", encoding="ISO-8859-1")
 
-# Add Cleaned_Response column
+
 def remove_symbols(text):
-    text = re.sub(r'[^a-zA-Z0-9\s.,!?;]', '', str(text)) # Ensure text is string
+    text = re.sub(r'[^a-zA-Z0-9\s.,!?;]', '', str(text)) 
     text = re.sub(r'\s+', ' ', text).strip()
     return text
-data['Cleaned_Response'] = data['Response'].apply(remove_symbols)
+data['Cleaned_Response'] = data['Response'].apply
 
-# Sidebar filters
+
 st.sidebar.title("Filters")
 source = st.sidebar.selectbox("Choose Source", ["All", "Human", "AI"])
 tone = st.sidebar.selectbox("Choose Tone", ["All"] + list(data["Tone"].unique()))
@@ -49,7 +49,7 @@ with col2:
     ax.set_ylabel("Sentiment Polarity")
     st.pyplot(fig)
 
-# ---- Word clouds side by side ----
+
 st.subheader("☁️ Word Clouds")
 
 human_text = " ".join(data[data["Source Type"] == "Human"]["Cleaned_Response"].astype(str))
@@ -73,7 +73,7 @@ with col2:
     ax.axis("off")
     st.pyplot(fig)
 
-# ---- Response Explorer ----
+
 st.subheader("📝 Response Explorer")
 for _, row in filtered.iterrows():
     st.markdown(f"**{row['Source Type']}** ({row['Tone']}): {row['Cleaned_Response']}")
