@@ -25,7 +25,7 @@ https://ai-is-boring.streamlit.app/
 
 - [`app.py`](app.py) → The Streamlit application (interactive dashboard).  
 - [`requirements.txt`](requirements.txt) → Dependencies for running the app.  
-- [`BACKGROUND.md`](BACKGROUND.md) → Extended project background & inspiration. 👉 Check out the full background here: [BACKGROUND.md](BACKGROUND.md)  
+- [`BACKGROUND.md`](BACKGROUND.md) → Extended project background & inspiration. 
 - [`human_ai_responses_fulll.csv`](human_ai_responses_fulll.csv) → Dataset used in the analysis.  
 - [`visuals/`](visuals/) → Screenshots and visuals for the project.  
 - [`.gitignore`](.gitignore)  
